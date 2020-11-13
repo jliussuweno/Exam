@@ -4,41 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/parentSignUpView"
     tools:context=".view.SignUpActivity">
 
     <ImageView
-        android:id="@+id/imageViewSignUp"
+        android:id="@+id/image_view_about"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@android:drawable/ic_menu_report_image"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/button_photo"
+        android:id="@+id/button_photo_about"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp24"
         android:layout_marginTop="@dimen/dp8"
         android:text="@string/take_a_picture"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_about" />
 
     <Button
-        android:id="@+id/button_gallery"
+        android:id="@+id/button_gallery_about"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp24"
         android:text="@string/open_gallery"
-        app:layout_constraintBottom_toBottomOf="@+id/button_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/button_photo_about"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_photo" />
+        app:layout_constraintTop_toTopOf="@+id/button_photo_about" />
 
     <EditText
-        android:id="@+id/editTextTextFullName"
+        android:id="@+id/edit_text_name_about"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -51,39 +51,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_photo" />
-
-    <EditText
-        android:id="@+id/editTextTextUsernameSignUp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/username"
-        android:digits="@string/alphabetUsername"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextFullName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextFullName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextFullName" />
+        app:layout_constraintTop_toBottomOf="@+id/button_photo_about" />
 
     <RelativeLayout
         android:id="@+id/passwordRelative"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextUsernameSignUp"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextUsernameSignUp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsernameSignUp">
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_name_about"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_name_about"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_name_about">
 
         <EditText
-            android:id="@+id/editTextTextPasswordSignUp"
+            android:id="@+id/edit_text_password_about"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:maxLength="8"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingTop="10dp"
             android:digits="@string/numbering"
+            android:hint="@string/password"
+            android:inputType="numberPassword"
+            android:maxLength="6"
+            android:paddingTop="10dp"
             android:paddingEnd="40dp"
             android:paddingBottom="10dp" />
 
@@ -123,11 +110,11 @@
             android:id="@+id/editTextTextConfirmPassword"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:maxLength="8"
-            android:ems="10"
             android:digits="@string/numbering"
+            android:ems="10"
             android:hint="@string/confirm_password"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
+            android:maxLength="6"
             android:paddingTop="10dp"
             android:paddingEnd="40dp"
             android:paddingBottom="10dp" />
@@ -146,25 +133,23 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/buttonSignUp"
+        android:id="@+id/buttonSaveProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/sign_up"
+        android:text="SIMPAN"
         app:layout_constraintEnd_toEndOf="@+id/confirmPasswordRelative"
         app:layout_constraintStart_toStartOf="@+id/confirmPasswordRelative"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRelative" />
 
     <TextView
-        android:id="@+id/textViewLogIn"
-        android:layout_width="0dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/have_an_account_log_in_here"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonSignUp"
-        app:layout_constraintStart_toStartOf="@+id/buttonSignUp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
-        app:layout_constraintVertical_bias="0.85" />
+        android:layout_marginTop="@dimen/dp24"
+        android:text="Foto Profil"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_about"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

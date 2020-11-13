@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Exam</string>
-    <string name="alphabet">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="alphabetUsername">abcdefghijklmnopqrstuvwxyz</string>
     <string name="name">Name</string>
     <string name="username">Username</string>
@@ -17,6 +16,20 @@
     <string name="take_a_picture">TAKE A PICTURE</string>
     <string name="open_gallery">OPEN GALLERY</string>
     <string name="numbering">0123456789</string>
-    <string name="pirates">Waiting</string>
-    <string name="ninjas">Delivered</string>
+    <string name="waiting">Waiting</string>
+    <string name="delivered">Delivered</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="emailPasswordNotFound">Email/Password tidak ditemukan!</string>
+    <string name="titleEmpty">Kolom Title tidak boleh kosong!</string>
+    <string name="usernameFound">Username Sudah Terdaftar, silahkan gunakan username yang lain!</string>
+    <string name="registerSuccess">User Berhasil Didaftarkan!</string>
+    <string name="nameWarningMin">Nama Harus lebih dari 6 Character atau sama dengan 6 Character</string>
+    <string name="nameWarningMax">Nama Tidak Maksimal 25 Character</string>
+    <string name="usernameWarningMin">Username Harus lebih dari 6 Character atau sama dengan 6 Character</string>
+    <string name="usernameWarningMax">Username Tidak Maksimal 25 Character</string>
+    <string name="passwordWarning">Password Harus 6 Numeric</string>
+    <string name="confirmPasswordWarning">Confirm Password Tidak Sama dengan Password</string>
+    <string name="data">data</string>
+    <string name="save">Save</string>
+    <string name="delete_all">Delete All</string>
 </resources>

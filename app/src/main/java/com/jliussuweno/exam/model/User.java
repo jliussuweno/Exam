@@ -1,24 +1,24 @@
 package com.jliussuweno.exam.model;
 
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "user_table")
-public class User {
+public class User implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
+    int userId = 0;
 
     String name;
-
-    @PrimaryKey
-    @NonNull
-    String email;
     String password;
+    String image;
 
-    public User(String name, String email, String password) {
+    public User(String name, String password, String image) {
         this.name = name;
-        this.email = email;
         this.password = password;
+        this.image = image;
     }
 
     public String getName() {
@@ -29,14 +29,6 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -45,4 +37,19 @@ public class User {
         this.password = password;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

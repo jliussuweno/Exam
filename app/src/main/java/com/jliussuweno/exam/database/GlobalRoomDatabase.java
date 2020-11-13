@@ -10,18 +10,18 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.jliussuweno.exam.model.User;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
-public abstract class UserRoomDatabase extends RoomDatabase {
+@Database(entities = {User.class}, version = 2, exportSchema = false)
+public abstract class GlobalRoomDatabase extends RoomDatabase {
 
-    public static UserRoomDatabase INSTANCE;
-    public abstract UserDao userDao();
+    public static GlobalRoomDatabase INSTANCE;
+    public abstract GlobalDao globalDao();
 
-    public static UserRoomDatabase getInstance(final Context context){
+    public static GlobalRoomDatabase getInstance(final Context context){
         if (INSTANCE == null){
-            synchronized (UserRoomDatabase.class){
+            synchronized (GlobalRoomDatabase.class){
                 if (INSTANCE == null){
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            UserRoomDatabase.class, "user_database")
+                            GlobalRoomDatabase.class, "database")
                             .fallbackToDestructiveMigration()
                             .allowMainThreadQueries()
                             .addCallback(sRoomDatabaseCallback)

@@ -5,24 +5,33 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import com.jliussuweno.exam.database.GlobalDao;
 import com.jliussuweno.exam.database.GlobalRoomDatabase;
+import com.jliussuweno.exam.model.User;
 
-public class LogInViewModel extends AndroidViewModel {
+import java.util.List;
+
+public class ListViewModel extends AndroidViewModel {
 
     Context context;
     GlobalRoomDatabase globalRoomDatabase;
     GlobalDao globalDao;
+    LiveData<List<User>> listLiveDataUser;
 
-    public LogInViewModel(@NonNull Application application) {
+    public ListViewModel(@NonNull Application application) {
         super(application);
         context = application.getApplicationContext();
         globalRoomDatabase = GlobalRoomDatabase.getInstance(context);
         globalDao = globalRoomDatabase.globalDao();
     }
 
-    public int checkLogin(String name, String password){
-        return globalDao.selectUserLogin(name, password);
+    public LiveData<List<User>> getListLiveDataUser() {
+        return listLiveDataUser;
+    }
+
+    public void getListAll(){
+         listLiveDataUser = globalDao.selectUserAll();
     }
 }
